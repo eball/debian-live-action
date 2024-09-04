@@ -13,8 +13,6 @@ on:
       - 'README.md'
       - 'LICENSE'
 
-  workflow_dispatch:
-
 jobs:
   build-release:
     name: "Build and Release"
