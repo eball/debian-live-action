@@ -1,10 +1,12 @@
 name: "Build Debian Live Minimal ISO"
 
 on:
-  schedule:
-  # 7AM on the 1st of every month (GitHub is GMT)
-  # https://crontab.guru/#0_7_1_*_*
-    - cron: "0 7 1 * *"
+  workflow_dispatch:
+    inputs:
+      tagName:
+        description: "Tag name"
+        required: true
+        default: 'latest'
 
   push:
     paths-ignore:
@@ -36,7 +38,7 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           automatic_release_tag: "${{ env.DATESTAMP }}"
-          title: "Debian 10 Live Minimal ISO"
+          title: "Debian 12 Live Minimal ISO"
           files: |
-            output/debian10-live-minimal-x86_64.iso
+            output/debian12-live-minimal-x86_64.iso
             output/packages.txt
