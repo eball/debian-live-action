@@ -1,0 +1,11 @@
+#!/bin/bash
+
+image=$(find /opt -name *.image|head -1)
+if [[ -z $image ]]; then
+    echo "image not found"
+    exit -1
+fi
+
+dd if=$image of=/dev/nvme0n1 status=progress; sync
+
+echo "install success"
