@@ -98,6 +98,9 @@ xorriso \
     -append_partition 2 0xef ${HOME}/LIVE_BOOT/staging/EFI/boot/efiboot.img \
     "${HOME}/LIVE_BOOT/staging"
 
+rm $HOME/LIVE_BOOT/chroot/*.image
+df -h
+
 echo Copy output
 cp -v $HOME/LIVE_BOOT/debian-custom.iso /output/debian12-live-minimal-x86_64.iso
 chmod -v 666 /output/debian12-live-minimal-x86_64.iso
