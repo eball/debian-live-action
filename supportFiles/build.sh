@@ -18,7 +18,7 @@ cp -v /supportFiles/box-install $HOME/LIVE_BOOT/chroot/usr/local/bin/box-install
 chmod +x $HOME/LIVE_BOOT/chroot/usr/local/bin/box-install
 
 echo Copy image to /opt
-cp -v /*.image $HOME/LIVE_BOOT/chroot/.
+cp -v /*.image $HOME/LIVE_BOOT/chroot/opt/.
 
 echo Mounting dev / proc / sys
 mount -t proc none $HOME/LIVE_BOOT/chroot/proc
